@@ -1,0 +1,125 @@
+@import '../../assets/styles/setup';
+
+.description {
+  padding-bottom: 1.25rem;
+  overflow: hidden;
+  position: relative;
+
+  &__text {
+    overflow: hidden;
+    max-height: 12.25rem;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      max-height: 12.063rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      max-height: 12.25rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      max-height: 11.188rem;
+    }
+  }
+
+  &__text div:after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    height: 7.875rem;
+    z-index: 1;
+    background: linear-gradient(0deg, #F8F8F8 0%, #F8F8F8 32.6%, rgba(248, 248, 248, 0.9) 60.21%, rgba(248, 248, 248, 0.6) 84.17%, rgba(248, 248, 248, 0) 100%);
+  }
+
+  &__text.active {
+    max-height: 100%;
+  }
+
+  &__text.active div:after,
+  &__text.mask div:after {
+    background: none;
+  }
+
+  &__text h1 {
+    line-height: $lh-standard;
+    color: $darken;
+    margin-bottom: 0.813rem;
+    font-size: $fs-lg;
+    padding-top: 0.188rem;
+
+    @include media-breakpoint-up(sm) {
+      margin-bottom: 0.938rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 1rem;
+      padding-top: 1.063rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 0.188rem;
+      font-size: 1.5rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 0.938rem;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__text h1 span {
+    text-transform: uppercase;
+  }
+
+  &__text p {
+    font-size: 0.625rem;
+    line-height: $lh-md;
+    color: $darken;
+    margin-bottom: 1rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: $fs-sm;
+    }
+  }
+
+  &__text p:last-child {
+    margin-bottom: 0;
+  }
+
+  &__btn {
+    position: absolute;
+    bottom: 1.469rem;
+    z-index: 2;
+    border: none;
+    background: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    color: $accent-color;
+
+    @include media-breakpoint-up(sm) {
+      bottom: 1.281rem;
+    }
+
+    svg {
+      width: 1.625rem;
+      height: 1rem;
+
+      @include media-breakpoint-up(xl) {
+        width: 2rem;
+        height: 1rem;
+      }
+    }
+  }
+}
+

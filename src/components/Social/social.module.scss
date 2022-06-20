@@ -1,0 +1,88 @@
+@import '../../assets/styles/setup';
+
+.wrapper {
+  &.light {
+    .title {
+      color: $white;
+      font-weight: $fw-bold;
+      margin-bottom: 0.5rem;
+
+      @include media-breakpoint-up(lg) {
+        line-height: $lh-lg;
+      }
+
+      @include media-breakpoint-up(xl) {
+        line-height: $lh-xl;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        line-height: $lh-lg;
+      }
+    }
+
+    .links {
+      gap: 1rem;
+    }
+
+    .link {
+      color: $white;
+
+      &:hover,
+      &:active {
+        color: darken($white, 25%)
+      }
+
+      svg {
+        @include media-breakpoint-up(md) {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &.footer {
+    &__list {
+      &_icon {
+        &.light {
+          .link {
+            svg {
+              @include media-breakpoint-up(md) {
+                width: 1.5rem;
+                height: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.title {
+  color: $gray-200;
+  font-size: $fs-sm;
+  line-height: $lh-xl;
+  margin-bottom: 0.938rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 1rem;
+  }
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.link {
+  position: relative;
+  color: $darken;
+  @include transition-time-fastest;
+
+  &:hover,
+  &:active {
+    color: lighten($darken, 25%)
+  }
+}

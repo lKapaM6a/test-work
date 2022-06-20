@@ -1,0 +1,83 @@
+@import '../../../../../../assets/styles/setup';
+
+.history {
+  &__head {
+    color: $gray-200;
+    font-size: $fs-sm;
+    line-height: $lh-xl;
+    border-bottom: 1px solid $grey-100;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    padding-right: 2rem;
+
+    @include media-breakpoint-up(md) {
+      line-height: $lh-default;
+    }
+  }
+
+  &__items {
+    padding: 0 0.313rem;
+
+    @include media-breakpoint-up(md) {
+      padding: 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    @include transition-time-fastest;
+
+    &:not(:last-of-type) {
+      margin-bottom: 1rem;
+    }
+
+    &:hover,
+    &:active {
+      color: darken($darken, 25%);
+
+      .history {
+        &__itemIcon {
+          color: darken($darken, 25%);
+        }
+      }
+    }
+  }
+
+  &__itemIcon {
+    color: $gray-200;
+    margin-right: 0.313rem;
+    display: flex;
+    @include transition-time-fastest;
+  }
+
+  &__itemText {
+    font-size: $fs-small;
+    color: $darken;
+  }
+
+  &__footer {
+    border-top: 1px solid $grey-100;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    display: flex;
+  }
+
+  &__clear {
+    font-size: $fs-sm;
+    color: $gray-200;
+    text-decoration: underline;
+    cursor: pointer;
+    @include transition-time-fastest;
+
+    @include media-breakpoint-up(md) {
+      font-size: $fs-small;
+    }
+
+    &:hover,
+    &:active {
+      color: $darken;
+    }
+  }
+}

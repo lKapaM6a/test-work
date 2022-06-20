@@ -1,0 +1,12 @@
+@import '../../../../assets/styles/setup';
+
+.burger {
+  display: flex;
+  cursor: pointer;
+  @include transition-time-fastest;
+
+  &:hover,
+  &:active {
+    opacity: 0.75;
+  }
+}

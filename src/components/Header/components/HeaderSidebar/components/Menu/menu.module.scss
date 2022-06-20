@@ -1,0 +1,76 @@
+@import '../../../../../../assets/styles/setup';
+
+.wrapper {
+  padding: 0.75rem 0.625rem 0.938rem;
+
+  @include media-breakpoint-up(lg) {
+    padding: 1rem;
+  }
+}
+
+.semiTitle {
+  color: $gray-200;
+  font-size: $fs-sm;
+  line-height: $lh-xl;
+  margin-bottom: 0.938rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 1rem;
+  }
+}
+
+.linkWrapper {
+  color: $darken;
+  line-height: $lh-xl;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  @include transition-time-fastest;
+
+  &:not(:last-of-type) {
+    margin-bottom: 1.25rem;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &:hover,
+  &:active {
+    color: lighten($darken, 25%)
+  }
+
+  &.linkWithoutIcon {
+    &:not(:last-of-type) {
+      margin-bottom: 0.938rem;
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.link {
+  font-size: $fs-sm;
+  position: relative;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 0.625rem;
+}
+
+.line {
+  background-color: $darken;
+  height: 1.5rem;
+  width: 1px;
+  margin: 0 1rem;
+  display: inline-block;
+}

@@ -1,0 +1,128 @@
+@import '../setup';
+
+// Seo
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+// Fonts
+.fw-300 {
+  font-weight: $fw-light;
+}
+
+.fw-normal {
+  font-weight: $fw-normal;
+}
+
+.fw-500 {
+  font-weight: $fw-500;
+}
+
+.fw-600 {
+  font-weight: $fw-semi;
+}
+
+.fw-700 {
+  font-weight: $fw-bold;
+}
+
+.fw-800 {
+  font-weight: $fw-800;
+}
+
+.fw-900 {
+  font-weight: $fw-extra;
+}
+
+// Titles
+.title {
+  font-size: 1.25rem;
+  line-height: $lh-default;
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 1.5rem;
+  }
+
+  &--sm {
+    margin-bottom: 0.938rem;
+    line-height: $lh-standard;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &--xl {
+    line-height: $lh-standard;
+    font-size: 1.5rem;
+    margin-bottom: 0.938rem;
+
+    @include media-breakpoint-up(sm) {
+      margin-bottom: 1rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      line-height: $lh-xl;
+    }
+  }
+
+  &--center {
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 1.5rem;
+      line-height: $lh-standard;
+    }
+  }
+}
+
+// Dividers
+.ant {
+  &-divider {
+    border-top: 1px solid $grey-100;
+    margin: 0.938rem 0;
+
+    @include media-breakpoint-up(sm) {
+      margin: 1rem 0;
+    }
+  }
+}
+
+.divider {
+  height: 1px;
+  background-color: $gray-100;
+  margin: 0.625rem 0;
+
+  @include media-breakpoint-up(lg) {
+    margin: 1rem 0;
+  }
+}
+
+// User selects
+.unselectable {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+// Img
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+// Body
+body {
+  &.no-scroll {
+    overflow: hidden;
+  }
+}

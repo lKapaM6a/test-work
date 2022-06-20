@@ -1,0 +1,515 @@
+@import '../../assets/styles/setup';
+
+// Promotional card
+.promotional {
+  display: flex;
+  border-radius: $small-radius;
+  overflow: hidden;
+  height: $height-promotional-cards-sm;
+  cursor: pointer;
+  @include transition-time-fastest;
+
+  @include media-breakpoint-up(lg) {
+    height: $height-promotional-cards;
+  }
+
+  &:hover,
+  &:active {
+    opacity: 0.75;
+  }
+
+  &__link {
+    display: flex;
+    flex: 1;
+  }
+
+  &__pic,
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+$card-padding: 0.625rem;
+
+// Card
+.card {
+  background: $white;
+  box-shadow: $card-box-shadow;
+  border-radius: $small-radius;
+  padding: $card-padding;
+  position: relative;
+  width: 100%;
+  //height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @include transition-time-fastest;
+
+  //TODO: refactor height cards
+  min-height: 21.875rem;
+
+  @include media-breakpoint-up(sm) {
+    min-height: 20.5rem;
+  }
+
+  &:hover {
+    overflow: visible;
+
+    .card {
+      &__infoAbsolute {
+        overflow: visible;
+        z-index: $card-z-index-chars;
+      }
+
+      &__holder {
+        will-change: box-shadow;
+        box-shadow: $card-box-shadow;
+      }
+    }
+  }
+
+  &__head {
+    position: relative;
+  }
+
+  // Image
+  &__image {
+    height: 7.188rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.313rem;
+    @include transition-time-fastest;
+
+    @include media-breakpoint-up(sm) {
+      height: 7.5rem;
+    }
+
+    &:hover,
+    &:active {
+      opacity: 0.75;
+    }
+  }
+
+  &__imageLink {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  // Labels
+  &__labels {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    pointer-events: none;
+
+    @include media-breakpoint-up(sm) {
+      top: 0.188rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      top: 0.375rem;
+    }
+  }
+
+  &__label {
+    background: $accent-color;
+    color: $darken;
+    font-size: 0.625rem;
+    line-height: $lh-sm;
+    border-radius: $card-label-radius;
+    padding: 0.188rem 0.313rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: $fs-small;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 0.313rem;
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 0.563rem;
+      }
+    }
+  }
+
+  // Colors
+  &__colors {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0.25rem;
+
+    @include media-breakpoint-up(sm) {
+      top: 0.188rem;
+      right: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+      top: 0;
+      right: 0.188rem;
+    }
+  }
+
+  &__color {
+    width: 0.625rem;
+    height: 0.625rem;
+    position: relative;
+    border: 1px solid transparent;
+    margin-bottom: 0.25rem;
+    border-radius: $card-color-radius;
+
+    @include media-breakpoint-up(lg) {
+      width: 0.75rem;
+      height: 0.75rem;
+      margin-bottom: 0.563rem;
+    }
+
+    &::before {
+      content: "";
+      border: 1px solid currentColor;
+      border-radius: $card-color-radius;
+      position: absolute;
+      width: 0.875rem;
+      height: 0.875rem;
+      top: -0.188rem;
+      left: -0.188rem;
+      opacity: 0;
+      visibility: hidden;
+      @include transition-time-fastest;
+
+      @include media-breakpoint-up(lg) {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    &:hover,
+    &:active {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__colorActive {
+    &::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__infoHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.313rem;
+  }
+
+  &__infoFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.313rem;
+
+    @include media-breakpoint-up(sm) {
+      margin-bottom: 0.625rem;
+    }
+  }
+
+  .space {
+    min-height: 21px;
+  }
+
+  //Available
+  &__availableIcon {
+    margin-right: 0.313rem;
+  }
+
+  &__available {
+    .card {
+      &__availableIcon {
+        color: $green-200;
+      }
+    }
+  }
+
+  &__notAvailable {
+    .card {
+      &__availableIcon {
+        color: $red-200;
+      }
+    }
+  }
+
+  &__availableText {
+    color: $gray-200;
+    font-size: $fs-small;
+    line-height: $lh-xl;
+  }
+
+  // Cashback
+
+  &__cashback {
+    display: flex;
+    flex: 0 1;
+
+    @include media-breakpoint-up(sm) {
+      flex: initial;
+    }
+  }
+
+  &__cashbackIcon {
+    flex: none;
+    margin-right: 0.313rem;
+    color: $accent-color;
+  }
+
+  &__cashbackText {
+    color: $gray-200;
+    font-size: $fs-small;
+    line-height: $lh-xl;
+    text-align: center;
+
+    @include media-breakpoint-up(sm) {
+      text-align: left;
+    }
+  }
+
+  // Name
+  &__nameWrapper {
+    margin-bottom: 0.25rem;
+
+    @include media-breakpoint-up(sm) {
+      margin-bottom: 0.313rem;
+    }
+  }
+
+  &__name {
+    font-size: $fs-sm;
+    line-height: $lh-md;
+    color: $darken;
+    text-decoration: none;
+
+    // 2 column text overflow
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include transition-time-fastest;
+
+    &:hover,
+    &:active {
+      color: darken($darken, 25%);
+      text-decoration: underline;
+    }
+  }
+
+  // Rating
+  &__rating {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    @include transition-time-fastest;
+
+    &:hover,
+    &:active {
+      opacity: 0.75;
+    }
+  }
+
+  &__ratingWrapper {
+    position: relative;
+  }
+
+  &__ratingComments {
+    color: $green-200;
+    margin-left: 0.5rem;
+  }
+
+  // Interactions
+  &__interactions {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__interaction {
+    cursor: pointer;
+    position: relative;
+    @include transition-time-fastest;
+
+    &.comparison {
+      color: $accent-color;
+    }
+
+    &.favorite {
+      color: $red-200;
+
+      svg {
+        fill: transparent;
+        @include transition-time-fastest;
+      }
+
+      .isActive {
+        fill: $red-200;
+      }
+    }
+  }
+
+  &__interactionAdded {
+    color: $green-200;
+    position: absolute;
+    top: -0.375rem;
+    right: -0.375rem;
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+    @include transition-time-fastest;
+
+    &.isActive {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+  }
+
+  // Installment Plan
+  &__installmentPlan {
+    margin: 0 -0.25rem 0.625rem;
+
+    @include media-breakpoint-up(sm) {
+      margin: 0 0 0.625rem 0;
+    }
+  }
+
+  &__installmentPlanTrigger {
+    display: inline-flex !important;
+  }
+
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  // Price
+  &__priceHead {
+    display: flex;
+    align-items: center;
+    margin-top: 0.125rem;
+    margin-bottom: 0.313rem;
+
+    @include media-breakpoint-up(sm) {
+      margin-top: 0;
+    }
+  }
+
+  &__oldPrice {
+    color: $gray-200;
+    font-size: 0.625rem;
+    line-height: 1.7;
+    text-decoration-line: line-through;
+
+    @include media-breakpoint-up(lg) {
+      font-size: $fs-small;
+    }
+  }
+
+  &__discount {
+    font-weight: $fw-500;
+    color: $white;
+    font-size: 0.625rem;
+    line-height: 0.75;
+    background-color: $red-200;
+    padding: 0.188rem 0.125rem;
+    margin-left: 0.438rem;
+    border-radius: 0.625rem;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+      font-size: $fs-small;
+      margin-left: 0.5rem;
+    }
+  }
+
+  &__price {
+    font-size: $fs-default;
+    color: $darken;
+    font-weight: $fw-bold;
+  }
+
+  // Chars
+  &__infoAbsolute {
+    position: relative;
+    overflow: hidden;
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
+  }
+
+  &__holder {
+    will-change: box-shadow;
+    position: absolute;
+    top: 0;
+    left: -$card-padding;
+    right: -$card-padding;
+    padding: 0 $card-padding $card-padding;
+    background-color: $white;
+    border-radius: 0 0 $small-radius $small-radius;
+    box-shadow: none;
+  }
+
+  &__chars {
+    padding-top: 0.625rem;
+    margin-top: 1.25rem;
+    border-top: 1px solid $grey-100;
+  }
+
+  &__char {
+    font-size: $fs-sm;
+    line-height: $lh-xl;
+    color: $gray-200;
+
+    &:not(:last-of-type) {
+      margin-bottom: 0.313rem;
+    }
+
+    span {
+      color: $darken;
+    }
+  }
+
+  &__infoMobile {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.313rem;
+
+    .card {
+      &__priceWrapper {
+        flex: none;
+      }
+    }
+  }
+}

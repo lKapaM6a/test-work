@@ -1,0 +1,20 @@
+@import '../../assets/styles/setup';
+
+.slider {
+  @include media-breakpoint-up(lg) {
+    margin-left: 1.625rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-left: 1rem;
+  }
+
+  &__item {
+    max-width: 296px;
+    flex: none;
+
+    @include media-breakpoint-up(lg) {
+      max-width: 270px;
+    }
+  }
+}

@@ -1,0 +1,139 @@
+@import '../../../../assets/styles/setup';
+
+.search {
+  position: relative;
+
+  &__searchWrapper {
+    display: flex;
+    height: 36px;
+  }
+
+  &__inputWrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex: 1;
+  }
+
+  &__form,
+  &__inputMain {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex: 1;
+    height: 100%;
+  }
+
+  .search {
+    &__input {
+      border-radius: $medium-radius !important;
+      padding-right: 3rem !important;
+      padding-left: 3rem !important;
+      height: 100% !important;
+      box-shadow: none !important;
+
+      @include media-breakpoint-up(sm) {
+        border-radius: $medium-radius 0 0 $medium-radius !important;
+      }
+
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+  }
+
+  &__searchIcon {
+    position: absolute;
+    z-index: 1;
+    left: 1rem;
+    pointer-events: none;
+  }
+
+  &__mic {
+    position: absolute;
+    z-index: 1;
+    right: 1rem;
+    cursor: pointer;
+
+    &.active {
+      color: $accent-color;
+    }
+  }
+
+  .search {
+    &__button {
+      height: 100%;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      font-weight: $fw-normal;
+      font-size: $fs-sm;
+      border: none;
+      padding-right: 1.063rem;
+      padding-left: 1rem;
+      display: none;
+
+      @include media-breakpoint-up(sm) {
+        display: inline-block;
+      }
+
+      &:hover,
+      &:active {
+        background-color: lighten($accent-color, 10%);
+      }
+
+      &:after {
+        content: none;
+      }
+    }
+  }
+
+  // Dropdown search
+  .searchResult {
+    width: 100%;
+    padding: 0.938rem 0.625rem;
+    background-color: $white;
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    overflow: hidden auto;
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      top: calc(100% + 5px) !important;
+      bottom: auto;
+      border-radius: $small-radius;
+      padding: 1.25rem 1rem 1rem;
+    }
+
+    &__wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__close {
+      position: absolute;
+      top: -0.313rem;
+      right: 0;
+      cursor: pointer;
+      color: $darken;
+      @include transition-time-fastest;
+
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+
+      &:hover,
+      &:active {
+        color: darken($darken, 25%);
+      }
+    }
+
+    &__loading {
+      display: flex;
+      justify-content: center;
+      margin: 1rem;
+    }
+  }
+}

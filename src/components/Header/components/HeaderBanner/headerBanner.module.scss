@@ -1,0 +1,54 @@
+@import '../../../../assets/styles/setup';
+
+.banner {
+  padding: 0.625rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: 75rem;
+  background-position-x: 55%;
+
+  @include media-breakpoint-up(sm) {
+    background-size: initial;
+  }
+
+  @include media-breakpoint-between(sm, md) {
+    background-position-x: 57.5%;
+    background-size: cover;
+  }
+
+  @include media-breakpoint-between(md, xl) {
+    background-position-x: 59.5%;
+  }
+
+  @include media-breakpoint-between(xl, xxl) {
+    background-position-x: 68.75%;
+  }
+}
+
+.text {
+  color: $white;
+  font-size: $fs-small;
+  line-height: $lh-default;
+  font-weight: $fw-500;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 15rem;
+
+  @include media-breakpoint-up(sm) {
+    max-width: 100%;
+  }
+
+  @include media-breakpoint-between(xl, xxl) {
+    margin-right: 5.75rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin-left: 7.25rem;
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: $fw-bold;
+  }
+}

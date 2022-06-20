@@ -1,0 +1,97 @@
+@import '../../assets/styles/setup';
+
+.stickyHeader {
+  position: sticky;
+  //TODO: refactor top position
+  top: -1px;
+  left: 0;
+  z-index: $z-index-header;
+}
+
+.header {
+  background-color: $dark-color;
+  padding: 1rem 0;
+  position: relative;
+
+  @include media-breakpoint-up(lg) {
+    padding: 1.25rem 0;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+
+  @include media-breakpoint-between(md, lg) {
+    padding: 0 0 0 5px;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    padding: 0 10px;
+  }
+}
+
+.burger {
+  display: flex;
+  @include media-breakpoint-up(lg) {
+    margin-right: 2.625rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-right: 2.563rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin-right: 3.25rem;
+  }
+}
+
+.catalog {
+  @include media-breakpoint-up(lg) {
+    margin-right: 2.25rem;
+    margin-left: 2.5rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin-right: 2.5rem;
+    margin-left: 3.125rem;
+  }
+}
+
+.search {
+  flex: 1;
+  margin: 0 1.25rem;
+
+  @include media-breakpoint-up(lg) {
+    margin: 0;
+  }
+}
+
+.lang {
+  @include media-breakpoint-up(lg) {
+    margin-left: 1.125rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-left: 3rem;
+  }
+}
+
+.interaction {
+
+  @include media-breakpoint-up(md) {
+    margin-left: 0.75rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin-left: 1.438rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-left: 1.25rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    margin-left: 2.5rem;
+  }
+}

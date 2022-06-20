@@ -1,0 +1,42 @@
+@import '../../../../assets/styles/setup';
+
+.interaction {
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    &:not(:first-of-type) {
+      @include media-breakpoint-up(md) {
+        border-left: 1px solid $accent-color;
+        margin-left: 0.875rem;
+        padding-left: 0.938rem;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        margin-left: 0.938rem;
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: $accent-color;
+    cursor: pointer;
+    @include transition-time-fastest;
+
+    &:hover,
+    &:active {
+      color: darken($accent-color, 10%)
+    }
+  }
+
+  &__count {
+    margin-top: 0.125rem;
+    margin-left: 0.375rem;
+    font-size: $fs-sm;
+    line-height: $lh-small;
+  }
+}

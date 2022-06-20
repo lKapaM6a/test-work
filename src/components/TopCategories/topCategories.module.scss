@@ -1,0 +1,47 @@
+@import '../../assets/styles/setup';
+
+.category {
+  margin-bottom: 1.25rem;
+
+  &__item {
+    width: 14rem;
+    height: 17.375rem;
+    background-color: $white;
+    border-radius: 0.313rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: $brands-box-shadow;
+    cursor: pointer;
+    margin-right: 0.625rem;
+    @include transition-time-fastest;
+
+    @include media-breakpoint-up(lg) {
+      width: 14.5rem;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      width: 16.375rem;
+      margin-right: 1.25rem;
+    }
+
+    &:hover,
+    &:active {
+      box-shadow: $modal-content-shadow;
+    }
+  }
+
+  &__subtitle {
+    font-size: $fs-default;
+    color: $darken;
+    text-align: center;
+    line-height: $lh-sm;
+  }
+
+  img {
+    max-height: 7.5rem;
+    max-width: 8.75rem;
+  }
+}

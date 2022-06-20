@@ -1,0 +1,96 @@
+@import '../../assets/styles/setup';
+
+$gap-cards: 5px;
+
+.wrapper {
+  margin: 1.25rem 0;
+
+  .title {
+    line-height: $lh-standard;
+    margin-bottom: 0.938rem;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(#{-$gap-cards} / 2);
+
+    &.hasContent {
+      overflow: hidden;
+      height: 494px;
+
+      //TODO: remove this
+      @include media-breakpoint-up(sm) {
+        height: 496px;
+      }
+
+      @include media-breakpoint-up(md) {
+        height: 482px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        height: 518px;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        height: 514px;
+      }
+    }
+  }
+
+  .card {
+    margin: 0 calc(#{$gap-cards} / 2) 5px;
+    width: calc(100% / 2 - #{$gap-cards});
+
+    @include media-breakpoint-between(sm, md) {
+      width: calc(100% / 3 - #{$gap-cards});
+      margin: 0 calc(#{$gap-cards} / 2) 11px;
+    }
+
+    @include media-breakpoint-up(md) {
+      width: calc(100% / 4 - #{$gap-cards});
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin: 0 calc(#{$gap-cards} / 2) 10px;
+      width: calc(100% / 5 - #{$gap-cards});
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin: 0 calc(#{$gap-cards} / 2) 5px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      margin: 0 calc(#{$gap-cards} / 2) 10px;
+      width: calc(100% / 6 - #{$gap-cards});
+    }
+
+    //TODO: refactor media query
+    @media screen and (max-width: 374.98px) {
+      width: calc(100% - #{$gap-cards});
+    }
+  }
+
+  .showMore {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    z-index: #{$card-z-index-chars - 1};
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 10.063rem;
+      background: $show-more-bg;
+    }
+  }
+}
+

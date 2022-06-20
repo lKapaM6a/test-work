@@ -1,0 +1,32 @@
+@import '../../assets/styles/setup';
+
+.wrapper {
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__link {
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+      text-decoration: none;
+      font-size: 1rem;
+      color: $darken;
+      @include transition-time-fastest;
+
+      &:hover,
+      &:active {
+        color: lighten($darken, 25%);
+      }
+    }
+  }
+
+  &__arrow {
+    margin-left: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+}

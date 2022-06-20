@@ -1,0 +1,151 @@
+@import '../../assets/styles/setup';
+
+// Choose city modal
+.picker {
+  &__grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.938rem;
+
+    @include media-breakpoint-up(sm) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 0.5rem;
+    }
+  }
+}
+
+.description {
+  margin-top: -6px;
+  font-size: $fs-small;
+  line-height: $lh-md;
+  color: $gray-200;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid $gray-300;
+    line-height: $lh-xl;
+  }
+}
+
+
+// Feedback  modal
+.recall {
+  margin-bottom: 1rem;
+  display: flex;
+  line-height: $lh-xl;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 1.5rem;
+  }
+
+  &__label {
+    margin-bottom: 0.5rem;
+  }
+
+  &__title,
+  &__phone {
+    position: relative;
+    margin-bottom: 0.625rem;
+    font-size: $fs-sm;
+
+    @include media-breakpoint-up(sm) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__phone {
+    font-size: $fs-default;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__titleIcon {
+    margin-right: 0.625rem;
+
+    @include media-breakpoint-up(sm) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__time {
+    color: $gray-200;
+    font-size: $fs-sm;
+
+    &:not(:last-of-type) {
+      margin-bottom: 0.313rem;
+
+      @include media-breakpoint-up(sm) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.form {
+  &__item {
+    margin-bottom: 1.5rem;
+  }
+
+  &__sendText {
+    margin: 0.5rem 0 -1.5rem;
+    font-size: $fs-small;
+    color: $gray-200;
+
+    @include media-breakpoint-up(sm) {
+      margin: 0.5rem 0 -0.5rem;
+    }
+
+    span {
+      color: $darken;
+    }
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    margin: 2.5rem 0 0.688rem;
+
+    @include media-breakpoint-up(sm) {
+      margin: 0 1.375rem 0.688rem;
+    }
+  }
+}
+
+// Success
+.success {
+  font-size: $fs-sm;
+  line-height: $lh-md;
+  color: $darken;
+  margin: 4rem 1.375rem 1rem 1rem;
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    font-size: $fs-lg;
+    line-height: $lh-xl;
+    margin: 1.375rem 1.375rem 1rem 1rem;
+  }
+
+  &__image {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin: 0 -0.625rem;
+
+    svg {
+      margin-top: -6rem;
+      margin-bottom: -1.5rem;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    margin-bottom: 2.5rem;
+  }
+}

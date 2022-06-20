@@ -1,0 +1,25 @@
+@import '../../../../assets/styles/setup';
+
+.logo {
+  display: flex;
+
+  a {
+    cursor: pointer;
+    @include transition-time-fastest;
+
+    &:hover,
+    &:active {
+      opacity: 0.75;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-width: 6rem;
+
+    @include media-breakpoint-up(lg) {
+      max-width: 8.625rem;
+    }
+  }
+}

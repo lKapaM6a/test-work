@@ -1,0 +1,144 @@
+@import '../../assets/styles/setup';
+
+.wrapper {
+  margin-top: 1.625rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 0.625rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-top: 0;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__cards {
+    // Fix shadow effects slider
+    padding: calc(#{$grid-gutter-width} / 2);
+    margin: calc(-#{$grid-gutter-width} / 2);
+  }
+
+  &__card {
+    width: 8.1888rem;
+
+    &:not(:last-of-type) {
+      margin-right: 0.5rem;
+
+      @include media-breakpoint-between(lg, xl) {
+        margin-right: 0.438rem;
+      }
+
+      @include media-breakpoint-up(xxl) {
+        margin-right: 1.063rem;
+      }
+    }
+
+    @include media-breakpoint-up(xxl) {
+      width: 10.188rem;
+    }
+
+    @include media-breakpoint-down(lg) {
+      width: 6.5rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 5.563rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      width: 6.188rem;
+    }
+  }
+}
+
+
+.brand {
+  height: 2.875rem;
+  width: 8.1888rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  border-radius: $large-radius;
+  overflow: hidden;
+  border: 1px solid transparent;
+  @include transition-time-fastest;
+
+  @include media-breakpoint-between(lg, xl) {
+    height: 4rem;
+    width: 7.938rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    height: 4rem;
+    width: 10.188rem;
+  }
+
+  @include media-breakpoint-down(lg) {
+    width: 6.5rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 5.563rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 6.188rem;
+  }
+
+  &:hover,
+  &:active {
+    box-shadow: $brands-box-shadow;
+  }
+
+  &.isActive {
+    background-color: $accent-color;
+
+    &:hover,
+    &:active {
+      box-shadow: none;
+      border-color: $dark-color;
+    }
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    font-size: $fs-small;
+    font-weight: $fw-semi;
+    color: $darken;
+    padding: 0.75rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: $fs-sm;
+    }
+
+    @include media-breakpoint-between(lg, xl) {
+      font-size: $fs-default;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      font-size: $fs-default;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $darken;
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+  }
+}

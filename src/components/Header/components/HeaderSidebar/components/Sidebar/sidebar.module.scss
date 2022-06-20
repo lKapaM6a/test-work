@@ -1,0 +1,70 @@
+@import '../../../../../../assets/styles/setup';
+
+.sidebar {
+  position: fixed;
+  background-color: $white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 20.625rem;
+  height: 100vh;
+  overflow: hidden auto;
+  z-index: $z-index-header;
+  transform: translateX(-100%);
+  @include transition-time-fastest;
+
+  &.visible {
+    transform: translateX(0);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 21.75rem;
+  }
+}
+
+.header {
+  background-color: $dark-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  @include media-breakpoint-up(lg) {
+    padding: 1rem;
+  }
+
+  .close {
+    cursor: pointer;
+    @include transition-time-fastest;
+
+    &:hover,
+    &:active {
+      opacity: 0.75;
+    }
+  }
+}
+
+.backdrop {
+  background-color: $backdrop-bg;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: calc(#{$z-index-header} - 1);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  @include transition-time-fastest;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}

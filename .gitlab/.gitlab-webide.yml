@@ -1,0 +1,4 @@
+schemas:
+  - uri: https://json.schemastore.org/package
+    match:
+      - package.json

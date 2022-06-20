@@ -1,0 +1,24 @@
+@import '../../../../assets/styles/setup';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  color: $accent-color;
+  cursor: pointer;
+  @include transition-time-fastest;
+
+  &:hover,
+  &:active {
+    color: darken($accent-color, 10%)
+  }
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+.text {
+  font-size: $fs-sm;
+  position: relative;
+  top: 2px;
+}

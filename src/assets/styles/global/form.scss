@@ -1,0 +1,338 @@
+@import '../setup';
+
+html {
+  --antd-wave-shadow-color: $accent-color;
+  --ant-primary-color: $accent-color;
+  --ant-primary-color-hover: $accent-color;
+}
+
+body {
+  .ant {
+    // Select
+    &-select {
+      display: block;
+      color: $darken;
+
+      &-selector {
+        padding: 0 0.938rem !important;
+        height: 37px !important;
+        border: 1px solid $border-form !important;
+        border-radius: $small-radius;
+
+        @include media-breakpoint-up(sm) {
+          padding: 0 0.5rem !important;
+        }
+      }
+
+      &-focused {
+        &:not(.ant-select-disabled),
+        &:not(.ant-select-customize-input) {
+          .ant-select-selector {
+            box-shadow: 0 0 0 2px rgb($accent-color, 50%) !important;
+          }
+        }
+      }
+
+      &-selection {
+        &-placeholder,
+        &-item {
+          line-height: 37px !important;
+        }
+
+        &-search-input {
+          height: 37px !important;
+        }
+
+        &-placeholder {
+          color: $placeholder;
+        }
+      }
+
+      &-focused {
+        box-shadow: $box-shadow-form !important;
+      }
+
+      &-dropdown {
+        padding: 0.25rem 0;
+        box-shadow: $box-shadow-form !important;
+        border-radius: 0 0 $small-radius $small-radius;
+        border: 1px solid $border-form !important;
+      }
+
+      &-item {
+        @include transition-time-fastest;
+      }
+
+      &-item-option-active:not(.ant-select-item-option-disabled),
+      &-item-option-selected:not(.ant-select-item-option-disabled) {
+        background-color: $accent-color;
+      }
+    }
+
+    // Radio buttons
+    &-radio-button-wrapper {
+      background: $grey-100;
+      border-radius: $small-radius;
+      border: none !important;
+      color: $darken;
+      font-size: $fs-sm;
+      line-height: 33px;
+      padding: 0 0.5rem;
+      height: 33px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &:first-child,
+      &:last-child {
+        border-radius: $small-radius;
+      }
+
+      @include media-breakpoint-up(sm) {
+        font-size: $fs-small;
+        line-height: 30px;
+        height: 30px;
+      }
+
+      &:before {
+        content: none;
+      }
+
+      &:hover,
+      &:active {
+        background-color: $accent-color;
+        color: $darken;
+      }
+
+      &-checked {
+        &:not(.ant-radio-button-wrapper-disabled) {
+          background-color: $accent-color;
+          color: $darken;
+
+          &:hover,
+          &:active {
+            background-color: $accent-color;
+            color: $darken;
+          }
+
+          &:focus-within {
+            box-shadow: 0 0 0 2px rgb($accent-color, 50%);
+          }
+        }
+      }
+
+      &--rounded {
+        border-radius: $medium-radius !important;
+        font-size: $fs-small;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 0.625rem;
+
+        @include media-breakpoint-up(xl) {
+          font-size: $fs-sm;
+          height: 27px;
+          line-height: 27px;
+        }
+
+        &:first-child,
+        &:last-child {
+          border-radius: $medium-radius !important;
+        }
+      }
+
+      &--white {
+        background-color: $white;
+        color: $darken;
+      }
+    }
+
+    // Inputs
+    &-input {
+      padding: 0 0.938rem !important;
+      height: 37px !important;
+      border: 1px solid $border-form !important;
+      border-radius: $small-radius;
+      color: $darken;
+
+      @include media-breakpoint-up(sm) {
+        padding: 0 0.5rem !important;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 2px rgb($accent-color, 50%) !important;
+      }
+
+      &--radius {
+        border-radius: $medium-radius;
+      }
+
+      &[disabled],
+      &[disabled]:hover,
+      &[disabled]:active,
+      &[disabled]:focus {
+        background-color: $grey-100;
+        border-color: $grey-100;
+        color: $gray-200;
+      }
+    }
+
+    // Errors
+    &-form-item {
+      &-has-error {
+        :not(.ant-input-disabled):not(.ant-input-borderless) {
+          .ant-input {
+            border-color: $red-200 !important;
+
+            &:focus {
+              box-shadow: none !important;
+            }
+
+          }
+        }
+      }
+
+      &-explain-error {
+        margin-top: 0.25rem;
+        margin-left: 1rem;
+        color: $red-200;
+        font-size: $fs-small;
+        line-height: $lh-xl;
+      }
+    }
+
+    // Buttons
+    &-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: none;
+      text-shadow: none;
+      text-decoration: none;
+
+      &-primary {
+        border-radius: $button-radius;
+        background-color: $accent-color;
+        border: 1px solid $accent-color;
+        padding: 0.75rem;
+        height: auto;
+        line-height: $lh-sm;
+        font-weight: $fw-semi;
+        font-size: $fs-sm;
+        color: $darken;
+        text-decoration: none;
+        @include transition-time-fastest;
+
+        @include media-breakpoint-up(sm) {
+          font-size: $fs-default;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          border-color: $dark-color;
+          background-color: $accent-color;
+          color: $darken;
+        }
+
+        &[disabled],
+        &[disabled]:hover,
+        &[disabled]:active,
+        &[disabled]:focus {
+          background-color: $grey-100;
+          border-color: $grey-100;
+          color: $gray-200;
+        }
+      }
+
+      //small btn
+      &--small {
+        font-size: $fs-small;
+        line-height: $lh-small;
+        padding: 0.625rem !important;
+      }
+
+      // show more
+      &--show-more {
+        font-size: $fs-sm;
+        padding: 0.625rem 1.5rem;
+      }
+
+      //not shadow
+      &--not-shadow {
+        box-shadow: none;
+        text-shadow: none;
+        padding: 0.625rem 1rem !important;
+      }
+
+      //  add to card basket
+      &__card-basket {
+        padding: 0.25rem 0.938rem !important;
+        min-height: 36px;
+        font-size: 0;
+
+        @include media-breakpoint-up(sm) {
+          font-size: $fs-sm;
+          padding: 0.25rem 0.625rem !important;
+        }
+
+        &-added {
+          background-color: transparent !important;
+          border: none !important;
+
+          &:after {
+            content: none !important;
+          }
+        }
+
+        .ant-btn-loading-icon {
+          font-size: 1.25rem;
+          line-height: 1;
+          height: 26px;
+          display: flex;
+          align-items: center;
+
+          .anticon {
+            padding-right: 0;
+
+            @include media-breakpoint-up(sm) {
+              padding-right: 0.313rem;
+            }
+          }
+        }
+      }
+
+      &__icon {
+        position: relative;
+        @include media-breakpoint-up(sm) {
+          margin-right: 0.313rem;
+          margin-left: -0.188rem;
+        }
+      }
+
+      &__icon-added {
+        position: absolute;
+        color: $green-200;
+        top: -3px;
+        right: -5px;
+        animation: addedAnimation 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+
+      > span {
+        line-height: 1;
+      }
+    }
+
+    &-form-item {
+      &-with-help,
+      &-explain {
+        font-size: $fs-small;
+      }
+    }
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}

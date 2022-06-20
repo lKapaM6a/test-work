@@ -1,0 +1,25 @@
+@import '../../assets/styles/setup';
+
+.wrapper {
+  .items {
+    display: block;
+    margin-bottom: 0.625rem;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .slider {
+    margin: calc(-#{$grid-gutter-width} / 2);
+    padding: calc(#{$grid-gutter-width} / 2);
+  }
+
+  .slide {
+    width: auto;
+
+    &:not(:last-of-type) {
+      margin-right: 0.5rem;
+    }
+  }
+}

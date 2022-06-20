@@ -1,0 +1,100 @@
+@import '../setup';
+
+.ant {
+  &-dropdown {
+    z-index: 5;
+
+    &__bordered {
+      background: $white;
+      border: 1px solid $accent-color;
+      border-radius: $medium-radius;
+      padding: 0.5rem;
+      font-weight: $fw-500;
+      line-height: $lh-small;
+      color: $darken;
+      font-size: 0.625rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      @include transition-time-fastest;
+
+      @include media-breakpoint-up(sm) {
+        font-size: $fs-small;
+        padding: 0.5rem 0.625rem;
+      }
+
+      &.ant-dropdown-open {
+        border-radius: $medium-radius $medium-radius 0 0;
+        border-color: transparent;
+        box-shadow: $dropdown-trigger-box-shadow;
+      }
+    }
+
+    &__arrow {
+      margin-left: 0.188rem;
+      @include transition-time-fastest;
+
+      @include media-breakpoint-up(sm) {
+        margin-left: 0.313rem;
+      }
+    }
+
+    &-open {
+      .ant {
+        &-dropdown {
+
+          &__arrow {
+            transform: scaleY(-1);
+          }
+        }
+      }
+    }
+
+    &-menu {
+      overflow: hidden;
+
+      &__bordered {
+        margin-top: -2px;
+        padding: 0;
+        border-radius: 0 0 $medium-radius $medium-radius;
+        box-shadow: $dropdown-menu-box-shadow;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: $grey-100;
+          height: 1px;
+          width: calc(100% - 1.25rem);
+        }
+
+        .ant-dropdown-menu {
+          &-item {
+            padding: 0.5rem 0.625rem;
+          }
+
+          &__item {
+            display: flex;
+            align-items: center;
+            color: $darken;
+            font-size: 0.625rem;
+            line-height: $lh-xl;
+
+            i {
+              margin-right: 0.313rem;
+              flex: none;
+            }
+
+            &-title {
+              //font-weight: $fw-semi;
+              font-weight: $fw-bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}

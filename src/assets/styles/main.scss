@@ -1,0 +1,23 @@
+// Required
+@import 'libs/bootstrap';
+@import '~antd/dist/antd.min.css';
+
+// Global
+@import 'libs/swiper';
+@import 'global/form';
+@import 'global/modal';
+@import 'global/spinner';
+@import 'global/dropdown';
+
+// Utils
+@import 'variables';
+
+// Abstracts
+@import 'fonts';
+
+// Setup
+@import 'setup';
+
+// Abstracts
+@import 'abstracts/abstracts';
+@import 'abstracts/animations';

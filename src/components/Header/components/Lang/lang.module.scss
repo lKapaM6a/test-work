@@ -1,0 +1,52 @@
+@import '../../../../assets/styles/setup';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.lang {
+  color: $darken;
+  font-size: $fs-small;
+  font-weight: $fw-light;
+
+  &:not(.active) {
+    cursor: pointer;
+    transition: color 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    &:hover,
+    &:active {
+      color: lighten($darken, 25%);
+    }
+  }
+
+  &.active {
+    font-size: $fs-default;
+    font-weight: $fw-normal;
+    cursor: default;
+  }
+}
+
+.line {
+  background-color: $darken;
+  height: 1.5rem;
+  width: 1px;
+  margin: 0 0.5rem;
+}
+
+.light {
+  .lang {
+    color: $white;
+
+    &:not(.active) {
+      &:hover,
+      &:active {
+        color: lighten($white, 25%);
+      }
+    }
+  }
+
+  .line {
+    background-color: $white;
+  }
+}

@@ -1,0 +1,35 @@
+@import '../../../../assets/styles/setup';
+
+.logo {
+  margin-bottom: 1rem;
+  line-height: $lh-small;
+
+  @include media-breakpoint-up(md) {
+    line-height: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    line-height: $lh-md;
+  }
+
+  @include media-breakpoint-up(xl) {
+    line-height: $lh-sm;
+  }
+
+  a {
+    cursor: pointer;
+    @include transition-time-fastest;
+
+    &:hover,
+    &:active {
+      opacity: 0.75;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-width: 6.813rem;
+  }
+}
+
